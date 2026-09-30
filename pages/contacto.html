@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Franco Record Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Vinculamos al CSS subiendo un nivel con ../ -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1>Franco Record Store 🎧</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#productos">Productos</a></li>
+                <li><a href="../index.html#multimedia">Novedades</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contacto-container">
+        <h2>Ponte en Contacto</h2>
+        <p>¿Tenés alguna duda sobre un vinilo o un pedido? Dejanos tu mensaje.</p>
+
+        <form action="https://formspree.io/f/xknkyoky" method="POST" class="contacto-form">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu consulta..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-comprar">Enviar Consulta</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Franco Record Store - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
