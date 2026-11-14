@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Franco Record Store para consultas sobre stock de vinilos, envíos o pedidos especiales.">
     <title>Contacto - Franco Record Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Vinculamos al CSS subiendo un nivel con ../ -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <h1>Franco Record Store 🎧</h1>
+            <h1><a href="../index.html" class="logo-link">Franco Record Store 🎧</a></h1>
         </div>
-        <nav>
+        <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../index.html#productos">Productos</a></li>
                 <li><a href="../index.html#multimedia">Novedades</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+                <li>
+                    <a href="carrito.html" class="nav-carrito" aria-label="Ver carrito de compras">
+                        🛒 Carrito (<span id="contador-carrito">0</span>)
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -30,7 +35,7 @@
         <h2>Ponte en Contacto</h2>
         <p>¿Tenés alguna duda sobre un vinilo o un pedido? Dejanos tu mensaje.</p>
 
-        <form action="https://formspree.io/f/xknkyoky" method="POST" class="contacto-form">
+        <form id="contacto-form" action="https://formspree.io/f/xknkyoky" method="POST" class="contacto-form" novalidate>
             <div class="form-group">
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -46,6 +51,8 @@
                 <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu consulta..." required></textarea>
             </div>
 
+            <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+
             <button type="submit" class="btn-comprar">Enviar Consulta</button>
         </form>
     </main>
@@ -54,5 +61,6 @@
         <p>&copy; 2026 Franco Record Store - Todos los derechos reservados</p>
     </footer>
 
+    <script type="module" src="../js/contacto.js"></script>
 </body>
 </html>

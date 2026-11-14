@@ -12,6 +12,13 @@ body {
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 /* ==========================================
@@ -25,6 +32,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 header h1 {
@@ -32,10 +40,17 @@ header h1 {
     font-size: 1.8rem;
 }
 
+.logo-link {
+    color: #fff;
+    text-decoration: none;
+}
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -45,8 +60,21 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: #ff6b6b;
+}
+
+.nav-carrito {
+    background-color: #e63946;
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
+    color: #fff !important;
+    transition: background-color 0.3s ease;
+}
+
+.nav-carrito:hover {
+    background-color: #c92a37;
 }
 
 /* BANNER HERO */
@@ -65,7 +93,7 @@ nav a:hover {
 }
 
 /* ==========================================
-   SECCIÓN PRODUCTOS (AQUÍ SE EMPAREJAN LAS IMÁGENES)
+   SECCIÓN PRODUCTOS
    ========================================== */
 .productos-seccion {
     max-width: 1200px;
@@ -103,7 +131,6 @@ nav a:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* CON ESTO TODAS LAS IMÁGENES QUEDAN EXACTAMENTE IGUALES */
 .disco-card img {
     width: 100%;
     height: 240px;
@@ -120,6 +147,11 @@ nav a:hover {
 .disco-card .artista {
     color: #666;
     font-size: 0.95rem;
+}
+
+.disco-card .formato {
+    color: #888;
+    font-size: 0.85rem;
     margin-bottom: 0.5rem;
 }
 
@@ -138,11 +170,29 @@ nav a:hover {
     border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
     transition: background-color 0.3s ease;
 }
 
-.btn-comprar:hover {
+.btn-comprar:hover,
+.btn-comprar:focus {
     background-color: #e63946;
+}
+
+.btn-secundario {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: #545b62;
 }
 
 /* ==========================================
@@ -195,18 +245,167 @@ nav a:hover {
     color: #e63946;
 }
 
-/* FOOTER */
-footer {
-    background-color: #1a1a1a;
-    color: #aaa;
+/* ==========================================
+   PÁGINA DE CARRITO
+   ========================================== */
+.carrito-seccion {
+    max-width: 1000px;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.carrito-seccion h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.carrito-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.carrito-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.carrito-item-info {
+    flex: 1;
+    min-width: 180px;
+}
+
+.carrito-controles {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-cantidad {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f9;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-cantidad:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.cantidad-valor {
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+}
+
+.carrito-subtotal {
+    text-align: right;
+    min-width: 110px;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.carrito-resumen {
+    background-color: #fff;
+    margin-top: 2rem;
     padding: 1.5rem;
-    margin-top: 3rem;
-} /* ==========================================
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.carrito-total {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.carrito-total span {
+    color: #e63946;
+}
+
+.carrito-acciones-globales {
+    display: flex;
+    gap: 1rem;
+}
+
+.carrito-vacio,
+.compra-exitosa {
+    background-color: #fff;
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.carrito-vacio p,
+.compra-exitosa p {
+    margin: 1rem 0 1.5rem;
+}
+
+/* ==========================================
+   NOTIFICACIONES TOAST
+   ========================================== */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.toast {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 0.85rem 1.2rem;
+    border-radius: 8px;
+    border-left: 4px solid #e63946;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.toast-ocultar {
+    opacity: 0;
+}
+
+/* ==========================================
    ESTILOS PÁGINA DE CONTACTO
    ========================================== */
 .contacto-container {
     max-width: 600px;
+    width: 90%;
     margin: 4rem auto;
     padding: 2rem;
     background-color: #fff;
@@ -251,4 +450,65 @@ footer {
 .form-group textarea:focus {
     outline: none;
     border-color: #e63946;
+}
+
+.form-feedback {
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-height: 1.2rem;
+}
+
+.form-feedback.error {
+    color: #e63946;
+}
+
+.form-feedback.exito {
+    color: #2a9d8f;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-banner h2 {
+        font-size: 1.8rem;
+    }
+
+    .carrito-item {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .carrito-subtotal {
+        text-align: center;
+    }
+
+    .carrito-resumen {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contacto-container {
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
 }

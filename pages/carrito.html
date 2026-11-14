@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carrito de compras de Franco Record Store. Revisa tus vinilos seleccionados, edita cantidades y finaliza tu pedido.">
+    <title>Carrito de Compras - Franco Record Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1><a href="../index.html" class="logo-link">Franco Record Store 🎧</a></h1>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#productos">Productos</a></li>
+                <li><a href="../index.html#multimedia">Novedades</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li>
+                    <a href="carrito.html" class="nav-carrito" aria-label="Ver carrito de compras">
+                        🛒 Carrito (<span id="contador-carrito">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="carrito-seccion">
+        <h2>Tu Carrito de Compras 🛒</h2>
+
+        <div id="carrito-container" class="carrito-container" aria-live="polite">
+            <!-- Los productos del carrito se renderizan aquí -->
+        </div>
+
+        <div id="carrito-resumen" class="carrito-resumen">
+            <p class="carrito-total">Total a pagar: <span id="total-compra">$0</span></p>
+            <div class="carrito-acciones-globales">
+                <button id="btn-vaciar" class="btn-secundario">Vaciar Carrito</button>
+                <button id="btn-finalizar" class="btn-comprar">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast-container" class="toast-container" aria-live="assertive"></div>
+
+    <footer>
+        <p>&copy; 2026 Franco Record Store - Todos los derechos reservados</p>
+    </footer>
+
+    <script type="module" src="../js/carrito.js"></script>
+</body>
+</html>

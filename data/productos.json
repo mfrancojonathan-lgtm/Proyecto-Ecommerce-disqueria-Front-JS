@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "titulo": "Short n' Sweet",
+    "artista": "Sabrina Carpenter",
+    "formato": "Vinilo LP",
+    "precio": 38000,
+    "imagen": "img/Sabrina Carpenter.avif"
+  },
+  {
+    "id": 2,
+    "titulo": "Un Verano Sin Ti",
+    "artista": "Bad Bunny",
+    "formato": "Doble Vinilo",
+    "precio": 36000,
+    "imagen": "img/Bad Bunny.webp"
+  },
+  {
+    "id": 3,
+    "titulo": "Random Access Memories",
+    "artista": "Daft Punk",
+    "formato": "Vinilo 180g",
+    "precio": 40000,
+    "imagen": "img/Daft punk.webp"
+  },
+  {
+    "id": 4,
+    "titulo": "Midnights",
+    "artista": "Taylor Swift",
+    "formato": "Vinilo Moonstone Blue",
+    "precio": 42000,
+    "imagen": "img/Taylor Swift.webp"
+  }
+]
